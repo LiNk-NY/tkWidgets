@@ -64,15 +64,15 @@ objectBrowser<- function (env = .GlobalEnv,
     # Write the content of the global environment to the list box for
     # object names
     viewEnv <- function(env){
-        writeList(listView, pickObjs(objNames = ls(env = env,
-                                    all = TRUE), fun = fun), clear = TRUE)
+        writeList(listView, pickObjs(objNames = ls(envir = env,
+                                    all.names = TRUE), fun = fun), clear = TRUE)
         writeCap(substitute(env))
     }
     # Executed when a user double clicks an object that is an R
     # environment. List object names in an enviroment to the list
     # boxes for objects.
     doEnv <- function (item){
-        writeList(listView,  pickObjs(objNames = ls(env = get(item)),
+        writeList(listView,  pickObjs(objNames = ls(envir = get(item)),
                                       fun = fun), clear = TRUE)
         writeCap(item)
         if(!is.null(parent.env(get(item))))
@@ -197,7 +197,7 @@ objectBrowser<- function (env = .GlobalEnv,
             tkconfigure(upBut, state = "disabled")
         }else{
             writeList(listView,
-                    pickObjs(objNames = ls(env = get(selectedObj)),
+                    pickObjs(objNames = ls(envir = get(selectedObj)),
                                              fun = fun), clear = TRUE)
             writeCap(selectedObj)
 

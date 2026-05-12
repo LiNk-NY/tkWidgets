@@ -64,7 +64,7 @@ fileWizard <- function(filename = "", fun = read.table, file = "file",
     # View the file after setting some of the arguments. Willl be
     # functioning later.
     view <- function(){
-        fileRead <- read.table(file = args$file, head = args$header,
+        fileRead <- read.table(file = args$file, header = args$header,
                                sep = args$sep, as.is = TRUE)
 
         fileRead <- as.matrix(fileRead)
@@ -77,7 +77,7 @@ fileWizard <- function(filename = "", fun = read.table, file = "file",
         for(i in names(boxes)){
             args[[i]] <<- .entry2Arg(tclvalue(tkget(boxes[[i]])))
         }
-        fileRead <<- read.table(file = args$file, head = args$header,
+        fileRead <<- read.table(file = args$file, header = args$header,
                                sep = args$sep, as.is = TRUE)
         end()
     }

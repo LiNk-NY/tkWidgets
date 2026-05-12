@@ -128,7 +128,7 @@ charOrNum <- function(vect){
 }
 
 getRowNames <- function(file.name, sep, header, skip){
-    data <- read.table(file.name, sep = sep, nrow = 3, header = header,
+    data <- read.table(file.name, sep = sep, nrows = 3, header = header,
                        skip = skip)
     return(rownames(data))
 }

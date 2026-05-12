@@ -151,7 +151,7 @@ vExplorer <- function (title = "BioC Vignettes Explorer",
 .popPackList <- function(packViewer, packName){
 
     if(packName == ""){
-        packs <- .packages(all = TRUE)
+        packs <- .packages(all.available = TRUE)
     }else{
         packs <- packName
     }
@@ -180,7 +180,7 @@ vExplorer <- function (title = "BioC Vignettes Explorer",
 .getPackNames <- function(packName = ""){
 
     if(packName == ""){
-        packNames <- .packages(all = TRUE)
+        packNames <- .packages(all.available = TRUE)
     }else{
         packNames <- packName
     }
@@ -279,7 +279,7 @@ viewVignette <- function(title, packName, vigPath, font = "arial 11"){
     export <- function(){
         temp <- objectBrowser(evalEnv(chunkList))
         for(i in names(temp)){
-            assign(i, temp[[i]], env = .GlobalEnv)
+            assign(i, temp[[i]], envir = .GlobalEnv)
         }
     }
     # Executes whatever that is in the text box for code chunk

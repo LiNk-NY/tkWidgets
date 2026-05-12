@@ -156,7 +156,7 @@ DPExplorer <- function (pkgName = "", title = "BioC Data Package Explorer",
     dropBut <- tkbutton(valueFrame, text = "Drop Key", width = 16,
                          command = drop, state = "disabled")
     clearBut <- tkbutton(valueFrame, text = "Clear Selection", width = 16,
-                          comman = clear, state = "disabled")
+                          command = clear, state = "disabled")
     tkpack(clearBut, side = "bottom", expand = FALSE, fill = "x")
     tkpack(dropBut, side = "bottom", expand = FALSE, fill = "x")
     tkpack(selectBut, side = "bottom", expand = FALSE, fill = "x")
@@ -181,7 +181,7 @@ DPExplorer <- function (pkgName = "", title = "BioC Data Package Explorer",
     cancelBut <- tkbutton(butFrame, text = "Cancel", width = 8,
                           command = cancel)
     finishBut <- tkbutton(butFrame, text = "Finish", width = 8,
-                          comman = finish)
+                          command = finish)
     tkgrid(cancelBut, finishBut, padx = 10)
     tkpack(butFrame, side = "top", expand = FALSE, fill = "x")
 

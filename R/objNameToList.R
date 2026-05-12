@@ -14,8 +14,7 @@ objNameToList <- function (objNames, env){
             returnList[[objNames[i]]] <- package.contents(gsub("(^package:)",
                                                           "\\", objNames[i]))
         }else{
-            returnList[[objNames[i]]] <- get(objNames[i], env = env)
-        }
+            returnList[[objNames[i]]] <- get(objNames[i], envir = env)        }
     }
     return(returnList)
 }

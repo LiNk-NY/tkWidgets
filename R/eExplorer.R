@@ -66,8 +66,7 @@ eExplorer <- function(pkgName, font = "arial 13", getFocus = TRUE){
     export <- function(){
         temp <- objectBrowser(evalEnv)
         for(i in names(temp)){
-            assign(i, temp[[i]], env = .GlobalEnv)
-        }
+            assign(i, temp[[i]], envir = .GlobalEnv)        }
     }
 
     # Executes whatever that is in the text box for code chunk

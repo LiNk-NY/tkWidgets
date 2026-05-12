@@ -63,7 +63,7 @@ widgetRender <- function (iWidget, tkTitle)
         body <- list(as.name("{"),
                      substitute(rval <-
                                 eval(as.call(list(WbuttonFun(wList[[j]]))),
-                                             env=PFRAME),
+                                             envir=PFRAME),
                                      list(j=i)),
                      substitute(mytext <- WtoText(wList[[j]])(rval),
                                 list(j=i)),
@@ -96,7 +96,7 @@ widgetRender <- function (iWidget, tkTitle)
         body <- list(as.name("{"),
                      substitute(rval <-
                                 eval(as.call(list(WbuttonFun(butFuns[[j]]))),
-                                             env=PFRAME),
+                                             envir=PFRAME),
                                      list(j=i))
                      )
 
